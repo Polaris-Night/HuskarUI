@@ -179,6 +179,8 @@ qt_add_qml_module(${PROJECT_NAME}
         imports/HusTreeView.qml
         imports/HusLabel.qml
         imports/HusSpace.qml
+        imports/HusFrame.qml
+        imports/HusPage.qml
     SOURCES
         $<$<BOOL:${WIN32}>:${HUSKARUI_RC_FILE}>
         cpp/husglobal.h

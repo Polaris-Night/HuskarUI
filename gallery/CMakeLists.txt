@@ -54,6 +54,8 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/Examples/General/ExpResizeMouseArea.qml
         qml/Examples/General/ExpRadius.qml
         qml/Examples/General/ExpLabel.qml
+        qml/Examples/General/ExpFrame.qml
+        qml/Examples/General/ExpPage.qml
         qml/Examples/DataEntry/ExpSwitch.qml
         qml/Examples/DataEntry/ExpSlider.qml
         qml/Examples/DataEntry/ExpSelect.qml
