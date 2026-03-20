@@ -566,8 +566,8 @@ Column {
         int age;
         QVariantMap toVariant() {
             QVariantMap var;
-            var["name"] = myData.name;
-            var["age"] = myData.age;
+            var["name"] = name;
+            var["age"] = age;
             return var;
         }
     };
@@ -586,7 +586,7 @@ Column {
 
 3. 在 Qml 中直接访问该数据集并赋值给 HusTableView.initModel。
 
-```auto
+```qml
     HusTableView {
         Component.onCompleted: {
             initModel = getMyDataList();
