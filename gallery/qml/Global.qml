@@ -360,8 +360,8 @@ QtObject {
                     key: 'HusTabView',
                     label: qsTr('HusTabView 标签页'),
                     source: './Examples/DataDisplay/ExpTabView.qml',
-                    updateVersion: '0.4.9.1',
-                    desc: qsTr('新增 closeTabCallback() 关闭标签回调。')
+                    updateVersion: '0.5.9.0',
+                    desc: qsTr('新增 initModel.contentDelegate 模型内容代理。\n新增 tabAlign 标签文本对齐。\n新增 defaultTab[Left/Right]Padding 标签左右填充。\n新增 color* 一些颜色属性。')
                 },
                 {
                     key: 'HusCollapse',
@@ -461,6 +461,13 @@ QtObject {
                     source: './Examples/DataDisplay/ExpTreeView.qml',
                     updateVersion: '0.5.6.2',
                     desc: qsTr('新增 forceUpdateCheckState/nodeIconFont/colorNodeIcon。')
+                },
+                {
+                    key: 'HusSegmented',
+                    label: qsTr('HusSegmented 分段控制器'),
+                    source: './Examples/DataDisplay/ExpSegmented.qml',
+                    addVersion: '0.5.9.0',
+                    desc: qsTr('用于展示多个选项并允许用户选择其中单个选项。')
                 },
             ]
         },
