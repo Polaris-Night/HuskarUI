@@ -52,6 +52,13 @@ T.Control {
         Size_Fixed = 1
     }
 
+    enum TabAlign
+    {
+        Align_Center = 0,
+        Align_Left = 1,
+        Align_Right = 2
+    }
+
     property bool animationEnabled: HusTheme.animationEnabled
     property var initModel: []
     property alias count: __tabModel.count
@@ -59,10 +66,10 @@ T.Control {
     property int tabType: HusTabView.Type_Default
     property int tabSize: HusTabView.Size_Auto
     property int tabPosition: HusTabView.Position_Top
+    property int tabAlign: HusTabView.Align_Center
     property bool tabAddable: false
     property bool tabCentered: false
     property bool tabCardMovable: true
-    property string tabAlign: 'center'
     property int defaultTabWidth: 80
     property int defaultTabHeight: parseInt(themeSource.fontSize) + 16
     property alias defaultTabSpacing: control.spacing
@@ -542,8 +549,8 @@ T.Control {
                     elide: Text.ElideRight
                     horizontalAlignment: {
                         switch (control.tabAlign) {
-                        case 'left': return Text.AlignLeft;
-                        case 'right': return Text.AlignRight;
+                        case HusTabView.Align_Left: return Text.AlignLeft;
+                        case HusTabView.Align_Right: return Text.AlignRight;
                         default: return Text.AlignHCenter;
                         }
                     }
@@ -722,8 +729,8 @@ T.Control {
                     }
                     horizontalAlignment: {
                         switch (control.tabAlign) {
-                        case 'left': return Text.AlignLeft;
-                        case 'right': return Text.AlignRight;
+                        case HusTabView.Align_Left: return Text.AlignLeft;
+                        case HusTabView.Align_Right: return Text.AlignRight;
                         default: return Text.AlignHCenter;
                         }
                     }
