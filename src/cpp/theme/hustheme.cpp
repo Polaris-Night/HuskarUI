@@ -87,6 +87,7 @@ void HusThemePrivate::initializeComponentPropertyHash()
         ADD_COMPONENT_PROPERTY(HusTour)
         ADD_COMPONENT_PROPERTY(HusTransfer)
         ADD_COMPONENT_PROPERTY(HusTreeView)
+        ADD_COMPONENT_PROPERTY(HusSegmented)
     }
 }
 
