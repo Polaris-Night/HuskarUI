@@ -94,6 +94,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/Examples/DataDisplay/ExpQrCode.qml
         qml/Examples/DataDisplay/ExpCheckerBoard.qml
         qml/Examples/DataDisplay/ExpTreeView.qml
+        qml/Examples/DataDisplay/ExpSegmented.qml
         qml/Examples/Navigation/ExpMenu.qml
         qml/Examples/Navigation/ExpContextMenu.qml
         qml/Examples/Navigation/ExpScrollBar.qml

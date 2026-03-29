@@ -367,7 +367,8 @@ QtObject {
                     key: 'HusCollapse',
                     label: qsTr('HusCollapse 折叠面板'),
                     source: './Examples/DataDisplay/ExpCollapse.qml',
-                    desc: qsTr('可以折叠/展开的内容区域。')
+                    updateVersion: '0.5.9.0',
+                    desc: qsTr('新增 initModel.contentDelegate 模型内容代理。')
                 },
                 {
                     key: 'HusAvatar',
