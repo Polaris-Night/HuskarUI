@@ -106,6 +106,8 @@ if(QT_HAS_LABSQMLMODEL_PRIVATE)
     )
 endif()
 
+hus_get_dir_sources(OUTPUT QML_SOURCES FILTER "imports/*.qml")
+
 qt_add_qml_module(${PROJECT_NAME}
     URI "HuskarUI.Basic"
     VERSION 1.0
@@ -118,69 +120,7 @@ qt_add_qml_module(${PROJECT_NAME}
     DEPENDENCIES
         HuskarUI.Impl
     QML_FILES
-        imports/HusButton.qml imports/HusButtonBlock.qml
-        imports/HusIconButton.qml
-        imports/HusCaptionButton.qml
-        imports/HusTourFocus.qml imports/HusTourStep.qml
-        imports/HusIconText.qml
-        imports/HusCopyableText.qml
-        imports/HusCaptionBar.qml
-        imports/HusWindow.qml
-        imports/HusMenu.qml
-        imports/HusDivider.qml
-        imports/HusEmpty.qml
-        imports/HusSwitch.qml
-        imports/HusScrollBar.qml
-        imports/HusResizeMouseArea.qml
-        imports/HusMoveMouseArea.qml
-        imports/HusAcrylic.qml
-        imports/HusLiquidGlass.qml
-        imports/HusSlider.qml
-        imports/HusTabView.qml
-        imports/HusToolTip.qml
-        imports/HusSelect.qml
-        imports/HusInput.qml
-        imports/HusOTPInput.qml
-        imports/HusRate.qml
-        imports/HusRadio.qml imports/HusRadioBlock.qml
-        imports/HusCheckBox.qml
-        imports/HusDrawer.qml
-        imports/HusCollapse.qml
-        imports/HusAvatar.qml
-        imports/HusCard.qml
-        imports/HusPagination.qml
-        imports/HusPopup.qml
-        imports/HusTimeline.qml
-        imports/HusTag.qml
-        imports/HusTableView.qml
-        imports/HusTransfer.qml
-        imports/HusMessage.qml
-        imports/HusAutoComplete.qml
-        imports/HusText.qml
-        imports/HusProgress.qml
-        imports/HusBadge.qml
-        imports/HusCarousel.qml
-        imports/HusSwitchEffect.qml
-        imports/HusContextMenu.qml
-        imports/HusBreadcrumb.qml
-        imports/HusInputNumber.qml imports/HusInputInteger.qml
-        imports/HusImage.qml imports/HusAnimatedImage.qml imports/HusImagePreview.qml
-        imports/HusMultiSelect.qml
-        imports/HusDateTimePicker.qml imports/HusDateTimePickerPanel.qml
-        imports/HusShadow.qml
-        imports/HusNotification.qml
-        imports/HusPopconfirm.qml
-        imports/HusPopover.qml
-        imports/HusModal.qml
-        imports/HusTextArea.qml
-        imports/HusSpin.qml
-        imports/HusCheckerBoard.qml
-        imports/HusColorPickerPanel.qml imports/HusColorPicker.qml
-        imports/HusTreeView.qml
-        imports/HusLabel.qml
-        imports/HusSpace.qml
-        imports/HusFrame.qml
-        imports/HusPage.qml
+        ${QML_SOURCES}
     SOURCES
         $<$<BOOL:${WIN32}>:${HUSKARUI_RC_FILE}>
         cpp/husglobal.h
@@ -207,56 +147,12 @@ qt_add_qml_module(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/QR-Code-generator/cpp/qrcodegen.cpp
 )
 
+hus_get_dir_sources(OUTPUT THEME_SOURCES FILTER "resources/theme/*.json")
+
 qt_add_resources(${PROJECT_NAME} "theme"
     PREFIX "/HuskarUI"
     OUTPUT_TARGETS HUSKARUI_THEME_OUTPUT_TARGETS #Export for static lib
-    FILES
-        resources/theme/Index.json
-        resources/theme/HusButton.json
-        resources/theme/HusCaptionButton.json
-        resources/theme/HusTour.json
-        resources/theme/HusIconText.json
-        resources/theme/HusCopyableText.json
-        resources/theme/HusMenu.json
-        resources/theme/HusDivider.json
-        resources/theme/HusEmpty.json
-        resources/theme/HusSwitch.json
-        resources/theme/HusScrollBar.json
-        resources/theme/HusSlider.json
-        resources/theme/HusTabView.json
-        resources/theme/HusToolTip.json
-        resources/theme/HusSelect.json
-        resources/theme/HusMultiSelect.json
-        resources/theme/HusInput.json
-        resources/theme/HusRate.json
-        resources/theme/HusRadio.json
-        resources/theme/HusRadioBlock.json
-        resources/theme/HusCheckBox.json
-        resources/theme/HusDrawer.json
-        resources/theme/HusCollapse.json
-        resources/theme/HusCard.json
-        resources/theme/HusPagination.json
-        resources/theme/HusPopup.json
-        resources/theme/HusTimeline.json
-        resources/theme/HusTag.json
-        resources/theme/HusTableView.json
-        resources/theme/HusMessage.json
-        resources/theme/HusAutoComplete.json
-        resources/theme/HusProgress.json
-        resources/theme/HusCarousel.json
-        resources/theme/HusBreadcrumb.json
-        resources/theme/HusImage.json
-        resources/theme/HusDateTimePicker.json
-        resources/theme/HusNotification.json
-        resources/theme/HusPopconfirm.json
-        resources/theme/HusPopover.json
-        resources/theme/HusModal.json
-        resources/theme/HusTextArea.json
-        resources/theme/HusSpin.json
-        resources/theme/HusColorPicker.json
-        resources/theme/HusTreeView.json
-        resources/theme/HusLabel.json
-        resources/theme/HusTransfer.json
+    FILES ${THEME_SOURCES}
 )
 
 qt_add_resources(${PROJECT_NAME} "resources"
