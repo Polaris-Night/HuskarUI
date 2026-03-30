@@ -46,7 +46,7 @@
         "colorTextSecondary": "$alpha(@colorTextBase, 0.65)",
         "colorTextTertiary": "$alpha(@colorTextBase, 0.45)",
         "colorTextQuaternary": "$alpha(@colorTextBase, 0.25)",
-        "colorTextDisabled": "$alpha(@colorTextBase, 0.25)",
+        "colorTextDisabled": "$alpha(@colorTextBase, 0.27)",
 
         "colorFill": "$alpha(@colorTextBase, 0.15)",
         "colorFillPrimary": "$alpha(@colorTextBase, 0.1)",
@@ -90,7 +90,6 @@
         "colorPrimaryContainerBgActive": "@colorPrimaryBase-7",
 
         "colorPrimaryContainerBgDisabled": "$alpha(@colorTextBase, 0.1)",
-        "colorPrimaryTextDisabled": "$alpha(@colorTextBase, 0.45)",
 
         "colorSuccessBg": "@colorSuccessBase-1",
         "colorSuccessBgHover": "@colorSuccessBase-2",
