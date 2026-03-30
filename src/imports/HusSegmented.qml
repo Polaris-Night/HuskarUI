@@ -35,6 +35,7 @@ T.Control {
     readonly property int count: __listModel.count
     property bool block: false
     property int orientation: Qt.Horizontal
+    property real defaultItemHeight: 26 * sizeRatio
     property int iconSpacing: 5
     property font iconFont: Qt.font({
                                         family: 'HuskarUI-Icons',
@@ -184,7 +185,7 @@ T.Control {
     contentItem: Item {
         id: __contentItem
         implicitWidth: __listView.orientation === ListView.Horizontal ? __listView.width : 120 * sizeRatio
-        implicitHeight: __listView.orientation === ListView.Horizontal ? 26 * sizeRatio : __listView.height
+        implicitHeight: __listView.orientation === ListView.Horizontal ? control.defaultItemHeight : __listView.height
 
         ListView {
             id: __listView
