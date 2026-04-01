@@ -269,7 +269,6 @@ HusWindow {
                 containerLoader.version = data.addVersion || data.updateVersion || '';
                 containerLoader.desc = data.desc || '';
                 containerLoader.tagState = data.state || '';
-                galleryMenu.gotoMenu(data.key);
                 gallerySwitchEffect.switchToSource(data.source);
             }
         }
