@@ -583,15 +583,13 @@ T.Control {
                     contentDelegate: __rootItem.menuContentDelegate
                     bgDelegate: __rootItem.menuBgDelegate
                     onClicked: {
-                        if (__rootItem.menuChildrenLength == 0) {
-                            if (__private.selectedItem != __rootItem) {
-                                __private.selectedItem = __rootItem;
-                                control.selectedKey = __rootItem.menuKey;
-                                __rootItem.selectedCurrentParentMenu();
-                                if (control.compactMode !== HusMenu.Mode_Relaxed || control.popupMode)
-                                    __rootItem.layerPopup.closeWithParent();
-                                __rootItem.clickMenu();
-                            }
+                        if (__rootItem.menuChildrenLength === 0) {
+                            __private.selectedItem = __rootItem;
+                            control.selectedKey = __rootItem.menuKey;
+                            __rootItem.selectedCurrentParentMenu();
+                            if (control.compactMode !== HusMenu.Mode_Relaxed || control.popupMode)
+                                __rootItem.layerPopup.closeWithParent();
+                            __rootItem.clickMenu();
                         } else {
                             if (control.compactMode !== HusMenu.Mode_Relaxed || control.popupMode) {
                                 const h = __rootItem.layerPopup.topPadding +
